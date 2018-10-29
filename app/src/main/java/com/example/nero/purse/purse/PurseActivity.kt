@@ -6,6 +6,8 @@ import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import com.example.nero.purse.R
+import com.example.nero.purse.purse.create.purse.PurseCreateActivity
+import com.example.nero.purse.purse.update.purse.PurseUpdateActivity
 import kotlinx.android.synthetic.main.content_purse.rv_list_purse
 import kotlinx.android.synthetic.main.activity_purse.*
 
@@ -19,15 +21,20 @@ class PurseActivity : AppCompatActivity(), IPurseView {
 
         //Button
         fab.setOnClickListener { view ->
-            pPresenter.addNewPurse()
+            pPresenter.createPurse()
         }
 
         rv_list_purse.layoutManager = LinearLayoutManager(this)
-        rv_list_purse.adapter = PurseAdapter(pPresenter.loadAllPurse())
+        rv_list_purse.adapter = PurseAdapter(pPresenter.getAllPurse())
     }
 
-    override fun onNewPurse() {
-        startActivity(Intent(this, PurseAddActivity::class.java))
+    override fun onCreatePurse() {
+        startActivity(Intent(this, PurseCreateActivity::class.java))
+    }
+
+    override fun onUpdatePurse() {
+        val intent = Intent(this, PurseUpdateActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onDeletePurse(status: Boolean) {
@@ -35,10 +42,5 @@ class PurseActivity : AppCompatActivity(), IPurseView {
             Snackbar.make(this.rv_list_purse, "Запис видалено", Snackbar.LENGTH_SHORT).show()
         else
             Snackbar.make(this.rv_list_purse, "Виникла помилка", Snackbar.LENGTH_SHORT).show()
-    }
-
-    override fun onUpdatePurse() {
-        val intent = Intent(this, PurseAddActivity::class.java)
-        startActivity(intent)
     }
 }

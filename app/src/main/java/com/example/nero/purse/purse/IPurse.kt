@@ -6,8 +6,9 @@ interface IPurse {
     val valuePurse: Double
     val typePurse: String
 
-    fun addItemPurse()
-    fun deleteItemPurse(index: Int)
-    fun updateItemPurse(index: Int)
-    fun loadAllPurse(): ArrayList<Purse>
+    fun createPurse()
+    fun deletePurse(index: Int)
+    fun updatePurse(index: Int)
+    fun getAllPurse(): ArrayList<Purse>
+    fun getPurse(index: Int): Purse
 }

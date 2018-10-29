@@ -20,8 +20,8 @@
             android:name=".purse.PurseActivity"
             android:label="@string/title_activity_purse"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".purse.PurseChangeActivity"></activity>
-        <activity android:name=".purse.PurseAddActivity"></activity>
+        <activity android:name=".purse.update.purse.PurseUpdateActivity"></activity>
+        <activity android:name=".purse.create.purse.PurseCreateActivity"></activity>
     </application>
 
 </manifest>

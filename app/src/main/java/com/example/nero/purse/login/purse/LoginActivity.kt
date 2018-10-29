@@ -15,6 +15,8 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        startActivity(Intent(this, PurseActivity::class.java))
+
         btn_login.setOnClickListener {
             if (APP_PASSWORD.equals(et_password.text.toString())) {
                 startActivity(Intent(this, PurseActivity::class.java))
