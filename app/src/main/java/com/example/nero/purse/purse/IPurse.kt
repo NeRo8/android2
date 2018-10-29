@@ -7,6 +7,7 @@ interface IPurse {
     val typePurse: String
 
     fun addItemPurse()
-    fun deleteItemPurse()
-    fun updateItemPurse()
+    fun deleteItemPurse(index: Int)
+    fun updateItemPurse(index: Int)
+    fun loadAllPurse(): ArrayList<Purse>
 }

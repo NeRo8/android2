@@ -6,4 +6,15 @@
     <string name="tv_label_purse">Сумма:</string>
     <string name="default_value">0</string>
     <string name="default_value_str">none</string>
+    <string name="insert_purse_value">Введіть суму на кошельку</string>
+    <string name="select_purse_image">Виберіть зображення кошелька</string>
+    <string name="select_purse_type">Виберіть тип валюти кошелька</string>
+    <string name="tv_label_image_purse">Будьласка заповніть поля</string>
+    <string name="tv_label_type_purse">Вкажіть тип валюти</string>
+    <string name="tv_label_value_purse">Вкажіть суму валюти</string>
+    <string-array name="purse_type_list">
+        <item>UAH</item>
+        <item>USD</item>
+        <item>EUR</item>
+    </string-array>
 </resources>
