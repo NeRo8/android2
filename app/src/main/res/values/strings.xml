@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Purse</string>
+    <string name="tv_label_password">Введіть пароль</string>
+    <string name="btn_label_login">Увійти</string>
+    <string name="title_activity_purse">PurseActivity</string>
+    <string name="tv_label_purse">Сумма:</string>
+    <string name="default_value">0</string>
+    <string name="default_value_str">none</string>
+</resources>
