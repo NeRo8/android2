@@ -28,11 +28,12 @@ class PurseCreateActivity : AppCompatActivity() {
                 }
             }
         }
-        btn_cancel.setOnClickListener {
+
+        btn_ok.setOnClickListener {
             startActivity(Intent(this, PurseActivity::class.java))
         }
-        btn_ok.setOnClickListener {
 
+        btn_cancel.setOnClickListener {
             startActivity(Intent(this, PurseActivity::class.java))
         }
     }

@@ -16,7 +16,6 @@ class PurseAdapter(private val purseList: ArrayList<Purse>) : RecyclerView.Adapt
 
     override fun getItemCount() = purseList.size
 
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder?.purseImage.setImageResource(purseList[position].imagePurse)
         holder?.purseValue.text = purseList[position].valuePurse.toString()
