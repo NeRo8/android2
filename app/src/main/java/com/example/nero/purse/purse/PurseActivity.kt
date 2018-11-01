@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.content_purse.rv_list_purse
 import kotlinx.android.synthetic.main.activity_purse.*
 
 class PurseActivity : AppCompatActivity(), IPurseView {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_purse)

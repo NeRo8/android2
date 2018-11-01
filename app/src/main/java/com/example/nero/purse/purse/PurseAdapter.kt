@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.example.nero.purse.R
 
-class PurseAdapter(private val purseList: ArrayList<Purse>) : RecyclerView.Adapter<PurseAdapter.ViewHolder>() {
+class PurseAdapter(private val purseList: List<Purse>) : RecyclerView.Adapter<PurseAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(parent?.context).inflate(R.layout.list_purse_view, parent, false))
@@ -17,9 +17,9 @@ class PurseAdapter(private val purseList: ArrayList<Purse>) : RecyclerView.Adapt
     override fun getItemCount() = purseList.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder?.purseImage.setImageResource(purseList[position].imagePurse)
-        holder?.purseValue.text = purseList[position].valuePurse.toString()
-        holder?.purseType.text = purseList[position].typePurse
+        holder?.purseImage.setImageResource(purseList[position!!].imagePurse!!)
+        holder?.purseValue.text = purseList[position!!].valuePurse.toString()
+        holder?.purseType.text = purseList[position!!].typePurse
         holder?.itemView.setOnClickListener {
 
         }

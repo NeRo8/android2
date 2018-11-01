@@ -1,5 +1,6 @@
 package com.example.nero.purse.purse.create.purse
 
+import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -8,8 +9,10 @@ import android.widget.AdapterView
 import com.example.nero.purse.R
 import com.example.nero.purse.purse.PurseActivity
 import kotlinx.android.synthetic.main.activity_purse_add.*
+import kotlinx.android.synthetic.main.list_purse_view.*
 
 class PurseCreateActivity : AppCompatActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +33,7 @@ class PurseCreateActivity : AppCompatActivity() {
         }
 
         btn_ok.setOnClickListener {
-            startActivity(Intent(this, PurseActivity::class.java))
+
         }
 
         btn_cancel.setOnClickListener {
