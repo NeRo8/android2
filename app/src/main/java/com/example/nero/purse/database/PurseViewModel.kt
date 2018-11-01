@@ -17,8 +17,8 @@ class PurseViewModel(application: Application) : AndroidViewModel(application) {
     val allPurse: LiveData<List<PurseDB>>
 
     init {
-        val wordsDao = PurseDatabase.getDatabase(application).purseDao()
-        repository = PurseRepository(wordsDao)
+        val purseDao = PurseDatabase.getDatabase(application).purseDao()
+        repository = PurseRepository(purseDao)
         allPurse = repository.allPurse
     }
 

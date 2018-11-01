@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
+import android.widget.Toast
 import com.example.nero.purse.R
 import com.example.nero.purse.database.PurseDB
 import com.example.nero.purse.database.PurseViewModel
@@ -37,8 +38,7 @@ class PurseCreateActivity : AppCompatActivity() {
 
         btn_ok.setOnClickListener {
             val purse: PurseDB = PurseDB(
-                purseImage = iv_purse_image.id,
-                purseValue = tv_purse_value.text.toString().toDouble(),
+                purseValue = edt_value_purse.text.toString().toDouble(),
                 purseType = spn_type_purse.selectedItem.toString()
             )
             val purseViewModel: PurseViewModel = ViewModelProviders.of(this).get(PurseViewModel::class.java)

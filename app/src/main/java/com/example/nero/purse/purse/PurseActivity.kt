@@ -14,18 +14,16 @@ import com.example.nero.purse.purse.update.purse.PurseUpdateActivity
 import kotlinx.android.synthetic.main.content_purse.rv_list_purse
 import kotlinx.android.synthetic.main.activity_purse.*
 
-class PurseActivity : AppCompatActivity(), IPurseView {
+class PurseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_purse)
         setSupportActionBar(toolbar)
 
-        val pPresenter = PursePresenter(this)
-
         //Button
         fab.setOnClickListener { view ->
-            pPresenter.createPurse()
+            onCreatePurse()
         }
         val adapter = PurseAdapter(this)
         rv_list_purse.layoutManager = LinearLayoutManager(this)
@@ -40,19 +38,12 @@ class PurseActivity : AppCompatActivity(), IPurseView {
         })
     }
 
-    override fun onCreatePurse() {
+    fun onCreatePurse() {
         startActivity(Intent(this, PurseCreateActivity::class.java))
     }
 
-    override fun onUpdatePurse() {
+    fun onUpdatePurse() {
         val intent = Intent(this, PurseUpdateActivity::class.java)
         startActivity(intent)
-    }
-
-    override fun onDeletePurse(status: Boolean) {
-        if (status)
-            Snackbar.make(this.rv_list_purse, "Запис видалено", Snackbar.LENGTH_SHORT).show()
-        else
-            Snackbar.make(this.rv_list_purse, "Виникла помилка", Snackbar.LENGTH_SHORT).show()
     }
 }

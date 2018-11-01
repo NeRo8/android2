@@ -25,9 +25,14 @@ class PurseAdapter internal constructor(context: Context) : RecyclerView.Adapter
     }
 
     override fun onBindViewHolder(holder: PurseViewHolder, position: Int) {
-        holder?.purseImage.setImageResource(purseList[position].purseImage!!)
         holder?.purseValue.text = purseList[position!!].purseValue.toString()
-        holder?.purseType.text = purseList[position!!].purseType.toString()
+        holder?.purseType.text = purseList[position!!].purseType
+        when (purseList[position].purseType) {
+            "UAH" -> holder?.purseImage.setImageResource(R.drawable.ic_ukraine)
+            "USD" -> holder?.purseImage.setImageResource(R.drawable.ic_united_states)
+            "EUR" -> holder?.purseImage.setImageResource(R.drawable.ic_european_union)
+        }
+
     }
 
     override fun getItemCount() = purseList.size
