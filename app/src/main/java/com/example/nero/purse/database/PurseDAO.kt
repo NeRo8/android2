@@ -6,17 +6,17 @@ import android.arch.persistence.room.*
 @Dao
 interface PurseDAO {
     @Insert
-    fun insertPurse(purse: Purse)
+    fun insertPurse(purse: PurseDB)
 
     @Delete
-    fun deletePurse(purse: Purse)
+    fun deletePurse(purse: PurseDB)
 
     @Update
-    fun updatePurse(purse: Purse)
+    fun updatePurse(purse: PurseDB)
 
     @Query("SELECT * FROM purse WHERE id=:purseId")
-    fun getPurseById(purseId: Int): LiveData<List<Purse>>
+    fun getPurseById(purseId: Int): LiveData<List<PurseDB>>
 
     @Query("SELECT * FROM purse")
-    fun getAllPurse(): LiveData<List<Purse>>
+    fun getAllPurse(): LiveData<List<PurseDB>>
 }

@@ -14,7 +14,7 @@ class PurseViewModel(application: Application) : AndroidViewModel(application) {
     private val scope = CoroutineScope(coroutineContext)
 
     private val repository: PurseRepository
-    val allPurse: LiveData<List<Purse>>
+    val allPurse: LiveData<List<PurseDB>>
 
     init {
         val wordsDao = PurseDatabase.getDatabase(application).purseDao()
@@ -22,16 +22,16 @@ class PurseViewModel(application: Application) : AndroidViewModel(application) {
         allPurse = repository.allPurse
     }
 
-    fun insert(purse: Purse) = scope.launch(Dispatchers.IO) {
+    fun insert(purse: PurseDB) = scope.launch(Dispatchers.IO) {
         repository.insert(purse)
     }
 
 
-    fun update(purse: Purse) = scope.launch(Dispatchers.IO) {
+    fun update(purse: PurseDB) = scope.launch(Dispatchers.IO) {
         repository.update(purse)
     }
 
-    fun delete(purse: Purse) = scope.launch(Dispatchers.IO) {
+    fun delete(purse: PurseDB) = scope.launch(Dispatchers.IO) {
         repository.delete(purse)
     }
 

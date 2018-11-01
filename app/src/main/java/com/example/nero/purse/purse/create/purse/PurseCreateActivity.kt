@@ -1,5 +1,6 @@
 package com.example.nero.purse.purse.create.purse
 
+import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -7,6 +8,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import com.example.nero.purse.R
+import com.example.nero.purse.database.PurseDB
+import com.example.nero.purse.database.PurseViewModel
 import com.example.nero.purse.purse.PurseActivity
 import kotlinx.android.synthetic.main.activity_purse_add.*
 import kotlinx.android.synthetic.main.list_purse_view.*
@@ -33,7 +36,13 @@ class PurseCreateActivity : AppCompatActivity() {
         }
 
         btn_ok.setOnClickListener {
-
+            val purse: PurseDB = PurseDB(
+                purseImage = iv_purse_image.id,
+                purseValue = tv_purse_value.text.toString().toDouble(),
+                purseType = spn_type_purse.selectedItem.toString()
+            )
+            val purseViewModel: PurseViewModel = ViewModelProviders.of(this).get(PurseViewModel::class.java)
+            purseViewModel.insert(purse)
         }
 
         btn_cancel.setOnClickListener {

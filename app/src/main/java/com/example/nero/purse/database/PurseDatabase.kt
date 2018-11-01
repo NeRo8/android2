@@ -5,7 +5,7 @@ import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
 
-@Database(entities = [Purse::class], version = 1)
+@Database(entities = [PurseDB::class], version = 1)
 abstract class PurseDatabase : RoomDatabase() {
     abstract fun purseDao(): PurseDAO
 

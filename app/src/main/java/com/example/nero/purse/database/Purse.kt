@@ -2,15 +2,17 @@ package com.example.nero.purse.database
 
 import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
+import android.arch.persistence.room.PrimaryKey
 
 @Entity(tableName = "purse")
-class Purse {
+data class PurseDB(
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    val purseId: Int? = null
+    var purseId: Int = 0,
     @ColumnInfo(name = "image")
-    val purseImage: Int? = null
-    @ColumnInfo(name = "value")
-    val purseValue: Double? = null
-    @ColumnInfo(name = "type")
-    val purseTyple: String? = null
-}
+val purseImage: Int,
+@ColumnInfo(name = "value")
+val purseValue: Double,
+@ColumnInfo(name = "type")
+val purseType: String
+)
