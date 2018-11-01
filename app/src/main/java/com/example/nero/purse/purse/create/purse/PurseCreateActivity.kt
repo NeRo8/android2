@@ -1,19 +1,16 @@
 package com.example.nero.purse.purse.create.purse
 
-import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
-import android.widget.Toast
 import com.example.nero.purse.R
-import com.example.nero.purse.database.PurseDB
-import com.example.nero.purse.database.PurseViewModel
+import com.example.nero.purse.database.purse.PurseDB
+import com.example.nero.purse.database.purse.PurseViewModel
 import com.example.nero.purse.purse.PurseActivity
 import kotlinx.android.synthetic.main.activity_purse_add.*
-import kotlinx.android.synthetic.main.list_purse_view.*
 
 class PurseCreateActivity : AppCompatActivity() {
 
@@ -37,11 +34,13 @@ class PurseCreateActivity : AppCompatActivity() {
         }
 
         btn_ok.setOnClickListener {
-            val purse: PurseDB = PurseDB(
+            val purse = PurseDB(
+                purseName = edt_name_purse.text.toString(),
                 purseValue = edt_value_purse.text.toString().toDouble(),
                 purseType = spn_type_purse.selectedItem.toString()
             )
-            val purseViewModel: PurseViewModel = ViewModelProviders.of(this).get(PurseViewModel::class.java)
+            val purseViewModel: PurseViewModel = ViewModelProviders.of(this).get(
+                PurseViewModel::class.java)
             purseViewModel.insert(purse)
         }
 

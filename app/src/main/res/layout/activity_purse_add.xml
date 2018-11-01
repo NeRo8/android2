@@ -39,7 +39,7 @@
         android:text="@string/tv_label_type_purse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/iv_purse_image"
-        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_name_purse" />
 
     <Spinner
         android:id="@+id/spn_type_purse"
@@ -74,7 +74,6 @@
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_purse_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/iv_purse_image"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -102,4 +101,17 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_value_purse" />
+
+    <EditText
+        android:id="@+id/edt_name_purse"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_purse_image"
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
 </android.support.constraint.ConstraintLayout>

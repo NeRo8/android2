@@ -4,10 +4,15 @@ import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
+import com.example.nero.purse.database.history.HistoryPurse
+import com.example.nero.purse.database.history.HistoryPurseDAO
+import com.example.nero.purse.database.purse.PurseDAO
+import com.example.nero.purse.database.purse.Purse
 
-@Database(entities = [PurseDB::class], version = 1)
+@Database(entities = [Purse::class, HistoryPurse::class], version = 1)
 abstract class PurseDatabase : RoomDatabase() {
     abstract fun purseDao(): PurseDAO
+    abstract fun historyDao(): HistoryPurseDAO
 
     companion object {
         @Volatile
@@ -22,7 +27,7 @@ abstract class PurseDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     PurseDatabase::class.java,
-                    "Word_database"
+                    "PurseDatabase"
                 ).build()
                 INSTANCE = instance
                 return instance

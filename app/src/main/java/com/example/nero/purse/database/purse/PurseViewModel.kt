@@ -1,8 +1,9 @@
-package com.example.nero.purse.database
+package com.example.nero.purse.database.purse
 
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.LiveData
+import com.example.nero.purse.database.PurseDatabase
 import kotlinx.coroutines.experimental.*
 import kotlinx.coroutines.experimental.android.Main
 import kotlin.coroutines.experimental.CoroutineContext
@@ -14,7 +15,7 @@ class PurseViewModel(application: Application) : AndroidViewModel(application) {
     private val scope = CoroutineScope(coroutineContext)
 
     private val repository: PurseRepository
-    val allPurse: LiveData<List<PurseDB>>
+    val allPurse: LiveData<List<Purse>>
 
     init {
         val purseDao = PurseDatabase.getDatabase(application).purseDao()
@@ -22,16 +23,16 @@ class PurseViewModel(application: Application) : AndroidViewModel(application) {
         allPurse = repository.allPurse
     }
 
-    fun insert(purse: PurseDB) = scope.launch(Dispatchers.IO) {
+    fun insert(purse: Purse) = scope.launch(Dispatchers.IO) {
         repository.insert(purse)
     }
 
 
-    fun update(purse: PurseDB) = scope.launch(Dispatchers.IO) {
+    fun update(purse: Purse) = scope.launch(Dispatchers.IO) {
         repository.update(purse)
     }
 
-    fun delete(purse: PurseDB) = scope.launch(Dispatchers.IO) {
+    fun delete(purse: Purse) = scope.launch(Dispatchers.IO) {
         repository.delete(purse)
     }
 
