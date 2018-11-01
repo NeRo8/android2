@@ -9,7 +9,6 @@ import android.support.v7.widget.LinearLayoutManager
 import com.example.nero.purse.R
 import com.example.nero.purse.database.purse.PurseViewModel
 import com.example.nero.purse.purse.create.purse.PurseCreateActivity
-import com.example.nero.purse.purse.update.purse.PurseUpdateActivity
 import kotlinx.android.synthetic.main.content_purse.rv_list_purse
 import kotlinx.android.synthetic.main.activity_purse.*
 
@@ -41,8 +40,4 @@ class PurseActivity : AppCompatActivity() {
         startActivity(Intent(this, PurseCreateActivity::class.java))
     }
 
-    fun onUpdatePurse() {
-        val intent = Intent(this, PurseUpdateActivity::class.java)
-        startActivity(intent)
-    }
 }

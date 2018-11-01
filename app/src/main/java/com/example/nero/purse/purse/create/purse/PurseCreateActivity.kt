@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import com.example.nero.purse.R
-import com.example.nero.purse.database.purse.PurseDB
+import com.example.nero.purse.database.purse.Purse
 import com.example.nero.purse.database.purse.PurseViewModel
 import com.example.nero.purse.purse.PurseActivity
 import kotlinx.android.synthetic.main.activity_purse_add.*
@@ -34,7 +34,7 @@ class PurseCreateActivity : AppCompatActivity() {
         }
 
         btn_ok.setOnClickListener {
-            val purse = PurseDB(
+            val purse = Purse(
                 purseName = edt_name_purse.text.toString(),
                 purseValue = edt_value_purse.text.toString().toDouble(),
                 purseType = spn_type_purse.selectedItem.toString()
