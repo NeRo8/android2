@@ -9,9 +9,12 @@
     <string name="insert_purse_value">Введіть суму на кошельку</string>
     <string name="select_purse_image">Виберіть зображення кошелька</string>
     <string name="select_purse_type">Виберіть тип валюти кошелька</string>
-    <string name="tv_label_image_purse">Будьласка заповніть поля</string>
+    <string name="tv_label_name_purse">Назва кошелька</string>
     <string name="tv_label_type_purse">Вкажіть тип валюти</string>
-    <string name="tv_label_value_purse">Вкажіть суму валюти</string>
+    <string name="tv_label_value_purse">Вкажіть суму</string>
+    <string name="tv_label_value_purse_leave">Залишок на кошельку</string>
+    <string name="rb_label_operation_add">Поповнення</string>
+    <string name="rb_label_operating_get">Зняття</string>
     <string-array name="purse_type_list">
         <item>UAH</item>
         <item>USD</item>
