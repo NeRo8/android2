@@ -1,8 +1,6 @@
 package com.example.nero.purse.purse
 
 import android.content.Context
-import android.content.Intent
-import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +11,7 @@ import com.example.nero.purse.R
 import com.example.nero.purse.database.purse.Purse
 import com.example.nero.purse.purse.update.purse.PurseUpdateActivity
 
-class PurseAdapter internal constructor(context: Context) :
+class PurseAdapter internal constructor(context: Context, val onItemClick: (Int) -> Unit) :
     RecyclerView.Adapter<PurseAdapter.PurseViewHolder>() {
 
     private var purseList = emptyList<Purse>() // Cached copy of words
@@ -39,10 +37,9 @@ class PurseAdapter internal constructor(context: Context) :
             "USD" -> holder?.purseImage.setImageResource(R.drawable.ic_united_states)
             "EUR" -> holder?.purseImage.setImageResource(R.drawable.ic_european_union)
         }
-
         //Вот так релізовується клік по обєкту
         holder.itemView.setOnClickListener {
-
+            onItemClick(purseList[position].purseId)
         }
     }
 

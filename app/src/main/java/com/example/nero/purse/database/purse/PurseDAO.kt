@@ -15,7 +15,7 @@ interface PurseDAO {
     fun updatePurse(purse: Purse)
 
     @Query("SELECT * FROM purse WHERE id=:purseId")
-    fun getPurseById(purseId: Int): LiveData<List<Purse>>
+    fun getPurseById(purseId: Int): Purse
 
     @Query("SELECT * FROM purse")
     fun getAllPurse(): LiveData<List<Purse>>

@@ -22,7 +22,7 @@ class PurseRepository(private val purseDao: PurseDAO) {
     }
 
     @WorkerThread
-    suspend fun getPurseById(purseId: Int): LiveData<List<Purse>> {
+    fun getPurseById(purseId: Int): Purse {
         return purseDao.getPurseById(purseId)
     }
 
